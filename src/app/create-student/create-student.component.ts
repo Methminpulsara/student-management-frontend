@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import Student from '../../models/student';
 import StudentService from '../../service/stuendService';
 import {FormsModule, NgForm} from '@angular/forms';
-import {NgIf, NgStyle} from '@angular/common';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-create-student',
@@ -14,11 +14,7 @@ import {NgIf, NgStyle} from '@angular/common';
   styleUrl: './create-student.component.css'
 })
 export class CreateStudentComponent {
-
-
-  constructor(private studentService:StudentService) {
-  }
-
+  constructor(private studentService:StudentService) {}
 
   public student: Student ={
     id:0,
@@ -26,7 +22,6 @@ export class CreateStudentComponent {
     age: 1,
     details:""
   }
-
 
   addStudent(form: NgForm) {
     if (form.invalid) {
@@ -38,6 +33,4 @@ export class CreateStudentComponent {
       err => alert("Error creating student!")
     );
   }
-
-
 }

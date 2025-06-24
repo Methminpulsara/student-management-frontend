@@ -1,67 +1,42 @@
-<div class="min-h-screen bg-slate-50 flex flex-col lg:flex-row relative">
-  <div
-    class="bg-white w-72 shadow-xl lg:fixed lg:left-0 lg:top-0 lg:bottom-0 overflow-hidden transition-all duration-300 ease-in-out z-40">
+<div class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white flex flex-col lg:flex-row">
 
-    <div class="px-6 py-8 border-b border-slate-100">
+  <aside class="w-72 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl shadow-2xl border-r border-slate-700/50 p-6 lg:fixed lg:inset-y-0 lg:left-0 z-40">
+    <div class="mb-10">
       <div class="flex items-center space-x-3">
-        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 w-10 h-10 rounded-lg flex items-center justify-center">
-          <span class="text-white font-bold text-xl">EM</span>
+        <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+          <span class="text-white font-bold text-lg">SM</span>
         </div>
-        <h1 class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
-          EmpManager
-        </h1>
+        <h1 class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">S Management</h1>
       </div>
     </div>
-    <nav class="flex-1 overflow-y-auto py-6 px-4 h-full">
-      <div class="mb-6 px-4">
-        <h5 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Management</h5>
-      </div>
 
-      <ul class="space-y-1.5">
-        <li>
-          <a
-            [routerLink]="['add']"
-            routerLinkActive="bg-indigo-50 text-indigo-600"
-            class="flex items-center gap-3 px-4 py-3 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg group transition-all duration-200">
-            <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
-              </svg>
-            </div>
-            <span class="font-medium">Add Employee</span>
-          </a>
-        </li>
+    <div class="mb-4">
+      <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Management</h2>
+    </div>
 
-        <li>
-          <a
-            [routerLink]="['manage']"
-            routerLinkActive="bg-indigo-50 text-indigo-600"
-            class="flex items-center gap-3 px-4 py-3 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg group transition-all duration-200">
-            <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-              </svg>
-            </div>
-            <span class="font-medium">Manage Employees</span>
-          </a>
-        </li>
+    <!-- Navigation Links -->
+    <nav class="space-y-2">
+      <ul routerLink="add" class="group flex items-center px-4 py-3 rounded-2xl transition-all duration-300 bg-slate-800/40 hover:bg-cyan-500/10 border border-slate-700/40 hover:border-cyan-500/40">
+        <div class="w-10 h-10 bg-cyan-500/20 text-cyan-300 group-hover:bg-cyan-500 group-hover:text-white rounded-xl flex items-center justify-center transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+        </div>
+        <span class="ml-4 font-medium text-slate-200 group-hover:text-white">Add Student</span>
       </ul>
-      <ul class="space-y-1.5">
+
+      <ul routerLink="manage" class="group flex items-center px-4 py-3 rounded-2xl transition-all duration-300 bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/40 hover:border-emerald-500/40">
+        <div class="w-10 h-10 bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white rounded-xl flex items-center justify-center transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <span class="ml-4 font-medium text-slate-200 group-hover:text-white">Manage Students</span>
       </ul>
+
     </nav>
-  </div>
-
-  <div class="flex-1 lg:ml-72 transition-all duration-300 min-h-screen">
-    <header class="bg-white shadow-sm sticky top-0 z-30 py-4 px-6 flex items-center justify-between">
-      <div class="flex items-center">
-        <h2 class="text-xl font-semibold text-slate-800">Student Management</h2>
-      </div>
-    </header>
-
-    <main class="p-6">
-      <div class="container mx-auto">
-        <router-outlet></router-outlet>
-      </div>
-    </main>
-  </div>
+  </aside>
+  <main class="flex-1 lg:ml-72 p-6">
+    <router-outlet></router-outlet>
+  </main>
 </div>

@@ -1,19 +1,19 @@
 import {Component, OnInit} from '@angular/core';
-import {StudentCardComponent} from '../components/student-card/student-card.component';
 import {CommonModule}  from '@angular/common';
 import StudentService from '../../service/stuendService';
-import Student from '../../models/student';
 import {FormsModule} from '@angular/forms';
+import Student from '../../models/student';
 
 @Component({
   selector: 'app-manage-student',
   imports: [
-    StudentCardComponent, CommonModule, FormsModule
+     CommonModule, FormsModule
   ],
   templateUrl: './manage-student.component.html',
   styleUrl: './manage-student.component.css'
 })
 export class ManageStudentComponent implements OnInit{
+
 
   constructor(private studentService: StudentService) {}
 
@@ -40,8 +40,6 @@ export class ManageStudentComponent implements OnInit{
        this.getAllStudents();
     }
 
-
-
   delete(id: number){
    this.studentService.delete(id).subscribe(
      res=>{alert(res.message)
@@ -50,7 +48,6 @@ export class ManageStudentComponent implements OnInit{
      err => alert("Error getting students!")
    )
   }
-
 
   closeModel(){
     this.isUpdateModalOpen = false;
@@ -73,8 +70,7 @@ export class ManageStudentComponent implements OnInit{
       age:this.updateStudent.age
     };
     this.studentService.update(this.student.id, updatedStudent).subscribe(
-      res=>{alert("Updated successfully!")
-      this.student=res
+      res=>{alert(res.message);
       this.closeModel()
       },
       err => alert("Error getting students!")
@@ -104,9 +100,5 @@ export class ManageStudentComponent implements OnInit{
     this.filterStudent()
   }
 
-  restFilter(){
-    this.search='';
-    this.filterStudent()
-  }
 
 }

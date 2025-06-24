@@ -20,15 +20,12 @@ export default class StudentService {
     return this.http.post<Student>(`${this.baseUrl}`,student);
   }
 
-  update(id:number,student:Student):Observable<Student>{
-    return this.http.put<Student>(`${this.baseUrl}/${id}`,student);
+  update(id:number,student:Student){
+    return this.http.put<{ message: string }>(`${this.baseUrl}/${id}`,student);
   }
 
   delete(id:number){
     return this.http.delete<{message:string}>("http://localhost:3000/api/students/"+id);
   }
-
-
-
 }
 

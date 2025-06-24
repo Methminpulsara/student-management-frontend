@@ -4,9 +4,8 @@ import {CreateStudentComponent} from './create-student/create-student.component'
 import {ManageStudentComponent} from './manage-student/manage-student.component';
 
 export const routes: Routes = [
-
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent,
     children:[{
       path: '',
