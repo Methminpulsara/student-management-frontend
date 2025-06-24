@@ -70,7 +70,7 @@ export class ManageStudentComponent implements OnInit{
       age:this.updateStudent.age
     };
     this.studentService.update(this.student.id, updatedStudent).subscribe(
-      res=>{alert(res.message);
+      res=>{alert(res.message);this.getAllStudents();
       this.closeModel()
       },
       err => alert("Error getting students!")
