@@ -1,9 +1,9 @@
 
 export default class Student {
-  id? : number;
+  id : number;
   name : string;
   age : number;
-  details? : string;
+  details: string;
 
   constructor(
     id:number,

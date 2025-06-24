@@ -7,7 +7,7 @@ import Student from "../models/student";
 @Injectable({
   providedIn: 'root',
 })
-export default class studentService {
+export default class StudentService {
   constructor(private http: HttpClient) {}
 
   private baseUrl = 'http://localhost:3000/api/students';
@@ -24,8 +24,8 @@ export default class studentService {
     return this.http.put<Student>(`${this.baseUrl}/${id}`,student);
   }
 
-  delete(id:number):Observable<Student>{
-    return this.http.delete<Student>("http://localhost:3000/api/students/"+id);
+  delete(id:number){
+    return this.http.delete<{message:string}>("http://localhost:3000/api/students/"+id);
   }
 
 
